@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCI Health Burn Program Variance Database</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #6c757d;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-section h5 {
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .form-row {
+            margin-bottom: 15px;
+        }
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">UCI Health</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>UCI Health Burn Program Variance Database</h1>
+    <form action="/submit" method="post">
+        <div class="form-section">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="mr">MR</label>
+                    <input type="text" class="form-control" id="mr" name="mr">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="unit">Unit</label>
+                    <input type="text" class="form-control" id="unit" name="unit">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="presentedAtBurnPI">Presented at Burn PI</label>
+                    <input type="text" class="form-control" id="presentedAtBurnPI" name="presentedAtBurnPI">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="caseSI">Case SI</label>
+                    <input type="text" class="form-control" id="caseSI" name="caseSI">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="admitDate">Admit Date</label>
+                    <input type="date" class="form-control" id="admitDate" name="admitDate">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="dcDate">DC Date</label>
+                    <input type="date" class="form-control" id="dcDate" name="dcDate">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ptOutcome">Pt Outcome</label>
+                    <select class="form-control" id="ptOutcome" name="ptOutcome">
+                        <option value="">Select Outcome</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-group">
+                <label for="hospitalCourse">Hospital Course</label>
+                <textarea class="form-control" id="hospitalCourse" name="hospitalCourse" rows="4"></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h5>Variance Entry Form</h5>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="varianceMR">MR</label>
+                    <input type="text" class="form-control" id="varianceMR" name="varianceMR">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="occurrenceDate">Occurrence Date</label>
+                    <input type="date" class="form-control" id="occurrenceDate" name="occurrenceDate">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="source">Source</label>
+                    <input type="text" class="form-control" id="source" name="source">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="complication">Complication</label>
+                    <input type="text" class="form-control" id="complication" name="complication">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="info">Info</label>
+                <textarea class="form-control" id="info" name="info" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="discussion">Discussion</label>
+                <textarea class="form-control" id="discussion" name="discussion" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="action">Action</label>
+                <textarea class="form-control" id="action" name="action" rows="2"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="level">Level</label>
+                    <input type="text" class="form-control" id="level" name="level">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="judgment">Judgment</label>
+                    <input type="text" class="form-control" id="judgment" name="judgment">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="determination">Determination</label>
+                    <input type="text" class="form-control" id="determination" name="determination">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="status">Status</label>
+                    <input type="text" class="form-control" id="status" name="status">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="omitFromPI">Omit from PI?</label>
+                <select class="form-control" id="omitFromPI" name="omitFromPI">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-secondary">Add Variance</button>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Record</button>
+    </form>
+</div>
+
+<footer>
+    &copy; 2024 UCI Health. All rights reserved.
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
